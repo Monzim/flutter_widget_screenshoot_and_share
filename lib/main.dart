@@ -3,6 +3,7 @@ import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -10,6 +11,9 @@ import 'package:screenshot/screenshot.dart';
 import 'package:share_plus/share_plus.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    statusBarColor: Colors.teal[50],
+  ));
   runApp(MyApp());
 }
 
@@ -52,6 +56,7 @@ class _ToolPageState extends State<ToolPage> {
       child: Scaffold(
         backgroundColor: Colors.lightBlue[50],
         appBar: AppBar(
+          backgroundColor: Colors.black,
           elevation: 0,
           title: Text('Picture Saving'),
           centerTitle: true,
